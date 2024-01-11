@@ -47,9 +47,9 @@ public class PubMQTTConfig {
                 } else {
                     String[] parts = data.split(" ");
 
-                    String timestamp = parts[0];
-                    String topic = parts[1];
-                    String mssg = parts[2];
+                    String timestamp = parts[0].trim();
+                    String topic = parts[1].trim();
+                    String mssg = parts[2].trim();
 
                     var message = MessageBuilder.withPayload(timestamp+";"+mssg).build();
                     outboundAdapter.setDefaultTopic(topic);
